@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2025 at 11:39 PM
+-- Generation Time: May 17, 2025 at 03:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,6 +35,27 @@ CREATE TABLE `employees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `name`, `address`, `salary`) VALUES
+(1, 'Rus Alin', 'Str.Oltului,nr.45', 5000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utilizatori`
+--
+
+CREATE TABLE `utilizatori` (
+  `id` int(11) NOT NULL,
+  `nume` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `parola` varchar(255) NOT NULL,
+  `data_creare` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Indexes for dumped tables
 --
 
@@ -45,6 +66,13 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `utilizatori`
+--
+ALTER TABLE `utilizatori`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -52,6 +80,12 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `utilizatori`
+--
+ALTER TABLE `utilizatori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
