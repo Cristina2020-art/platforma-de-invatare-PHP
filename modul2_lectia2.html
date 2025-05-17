@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 2 – Lecția 2: Clase, obiecte și metode</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0; padding: 20px;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #343a40;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 2 - Lecția 2</h1>
+  <p>Clase, obiecte și metode</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul2.html">Modul 2</a>
+</nav>
+
+<div class="content">
+
+  <h2>Clase și obiecte</h2>
+  <p>O clasă este un tip de date definit de utilizator care conține proprietăți (variabile) și metode (funcții).</p>
+
+  <h2>Exemplu de clasă cu proprietăți și metode</h2>
+  <pre><code>&lt;?php
+class Persoana {
+  public $nume;
+  public $varsta;
+
+  public function __construct($nume, $varsta) {
+    $this->nume = $nume;
+    $this->varsta = $varsta;
+  }
+
+  public function salut() {
+    return "Salut, numele meu este " . $this->nume . " și am " . $this->varsta . " ani.";
+  }
+}
+
+$persoana1 = new Persoana("Ana", 25);
+echo $persoana1->salut();
+?&gt;
+  </code></pre>
+
+  <h2>Metode speciale</h2>
+  <ul>
+    <li><code>__construct()</code> – constructorul clasei, se execută la crearea obiectului</li>
+  </ul>
+
+  <button onclick="location.href='modul2_lectia3.html'">Următoarea lecție: Moștenire și polimorfism</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

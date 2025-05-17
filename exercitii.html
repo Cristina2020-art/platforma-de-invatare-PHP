@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Exerciții PHP Interactive</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h2 { color: #007bff; }
+        textarea { width: 100%; }
+        .feedback { background: #eef; padding: 10px; border-left: 4px solid #007bff; margin-top: 5px; }
+        .corect { color: green; }
+        hr { margin: 30px 0; }
+        footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+    </style>
+</head>
+<body>
+
+<h2>Exerciții PHP Interactive</h2>
+<p>Bine ai venit, <strong><!-- Nume utilizator PHP aici --></strong>. </p>
+<p> Progresul tău este salvat automat.</p>
+
+<!-- Formularele sunt procesate de un script PHP (exercitii.php) -->
+<?php for ($i = 1; $i <= 10; $i++): ?>
+    <h3>Exercițiul <?= $i ?></h3>
+    <p>
+        <?php
+        switch ($i) {
+            case 1: echo 'Afișează: Salut lume!'; break;
+            case 2: echo 'Afișează suma dintre 7 și 3.'; break;
+            case 3: echo 'Verifică dacă 9 este par sau impar.'; break;
+            case 4: echo 'Creează o variabilă $nume = "Ion" și afișează: Salut, Ion!'; break;
+            case 5: echo 'Dacă $x = 5, afișează "Mic" dacă e sub 10.'; break;
+            case 6: echo 'Afișează numerele de la 1 la 5, fiecare pe rând nou.'; break;
+            case 7: echo 'Creează funcția salut() care afișează: Bună ziua!'; break;
+            case 8: echo 'Afișează fiecare element din array-ul ["mere", "pere", "prune"].'; break;
+            case 9: echo 'Calculează media dintre 10, 8 și 6.'; break;
+            case 10: echo 'Cu $nume = "Maria", afișează: Bun venit, Maria!'; break;
+        }
+        ?>
+    </p>
+
+    <form method="POST" action="exercitii.php">
+        <textarea name="cod" rows="5" cols="60"></textarea><br>
+        <input type="hidden" name="ex" value="<?= $i ?>">
+        <button>Verifică</button>
+    </form>
+
+    <hr>
+<?php endfor; ?>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

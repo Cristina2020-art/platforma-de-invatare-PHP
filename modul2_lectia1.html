@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 2 – Lecția 1: Programare orientată pe obiect în PHP – introducere</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0; padding: 20px;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #343a40;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 2 - Lecția 1</h1>
+  <p>Programare orientată pe obiect în PHP – introducere</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul2.html">Modul 2</a>
+</nav>
+
+<div class="content">
+
+  <h2>Ce este programarea orientată pe obiecte (OOP)?</h2>
+  <p>OOP este un mod de a organiza codul folosind <strong>clase</strong> și <strong>obiecte</strong>. Acest lucru ajută la structurarea și reutilizarea codului.</p>
+
+  <h2>Termeni importanți:</h2>
+  <ul>
+    <li><strong>Clasă</strong> – un șablon pentru crearea obiectelor</li>
+    <li><strong>Obiect</strong> – o instanță a unei clase</li>
+    <li><strong>Proprietăți</strong> – variabile ale unei clase</li>
+    <li><strong>Metode</strong> – funcții ale unei clase</li>
+  </ul>
+
+  <h2>Exemplu simplu de clasă și obiect în PHP</h2>
+  <pre><code>&lt;?php
+class Masina {
+  public $culoare;
+
+  public function __construct($culoare) {
+    $this->culoare = $culoare;
+  }
+
+  public function descrie() {
+    return "Aceasta masina este de culoare " . $this->culoare . ".";
+  }
+}
+
+$masina_mea = new Masina("rosie");
+echo $masina_mea->descrie();
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul2_lectia2.html'">Următoarea lecție: Clase, obiecte și metode</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

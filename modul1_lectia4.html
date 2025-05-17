@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 1 – Lecția 4: Variabile și tipuri de date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 1 - Lecția 4</h1>
+  <p>Variabile și tipuri de date în PHP</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul1.html">Modul 1</a>
+</nav>
+
+<div class="content">
+
+  <h2>Variabile în PHP</h2>
+  <p>Variabilele în PHP sunt spații de memorie care stochează date. Sunt denumite cu simbolul <code>$</code> urmat de un nume valid (litere, cifre, _ și nu începe cu cifră).</p>
+
+  <h3>Exemplu de variabile:</h3>
+  <pre><code>&lt;?php
+$nume = "Ion";
+$varsta = 30;
+$pret = 19.99;
+$activ = true;
+?&gt;
+  </code></pre>
+
+  <h2>Tipuri de date în PHP</h2>
+  <ul>
+    <li><b>string</b> – text (ex: "Salut")</li>
+    <li><b>int</b> – număr întreg (ex: 10)</li>
+    <li><b>float</b> – număr zecimal (ex: 3.14)</li>
+    <li><b>bool</b> – adevărat/fals (true/false)</li>
+    <li><b>array</b> – colecție de valori</li>
+    <li><b>null</b> – valoare nulă</li>
+  </ul>
+
+  <h3>Exemplu utilizare tipuri:</h3>
+  <pre><code>&lt;?php
+$mesaj = "Salut lume!";
+$numar = 42;
+$pret = 12.5;
+$activ = false;
+$lista = array("mere", "pere", "banane");
+$valoareNula = null;
+?&gt;
+  </code></pre>
+
+  <h2>Tipul variabilelor se poate schimba dinamic:</h2>
+  <pre><code>&lt;?php
+$variabila = "text";
+$variabila = 10; // acum este număr
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul1_lectia5.html'">Următoarea lecție: Structuri de control</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

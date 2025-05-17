@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 2 – Lecția 4: Namespace-uri și utilizarea lor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0; padding: 20px;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #343a40;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 2 - Lecția 4</h1>
+  <p>Namespace-uri și utilizarea lor</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul2.html">Modul 2</a>
+</nav>
+
+<div class="content">
+
+  <h2>Ce este un namespace?</h2>
+  <p>Namespace-urile organizează codul pentru a evita conflictele între clase sau funcții cu același nume.</p>
+
+  <h2>Exemplu simplu</h2>
+  <pre><code>&lt;?php
+namespace Proiect\Util;
+
+class Ajutor {
+  public static function salut() {
+    return "Salut din namespace!";
+  }
+}
+
+// Folosire:
+echo \Proiect\Util\Ajutor::salut();
+?&gt;
+  </code></pre>
+
+  <h2>Importarea unui namespace cu <code>use</code></h2>
+  <pre><code>&lt;?php
+use Proiect\Util\Ajutor;
+
+echo Ajutor::salut();
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul2_lectia5.html'">Următoarea lecție: Tratarea excepțiilor</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

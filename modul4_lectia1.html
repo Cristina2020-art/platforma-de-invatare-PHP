@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 4 – Lecția 1: Introducere în securitatea web</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 20px; }
+    header { background: #222; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #222; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    ul { margin-left: 20px; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 4 - Lecția 1</h1>
+  <p>Introducere în securitatea web</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul4.html">Înapoi la Modul 4</a> |
+  <a href="modul4_lectia2.html">Următoarea lecție</a>
+</nav>
+
+<div class="content">
+  <h2>Ce este securitatea web?</h2>
+  <p>Securitatea web protejează aplicațiile și datele împotriva accesului neautorizat și atacurilor rău intenționate.</p>
+
+  <h2>Principii de bază</h2>
+  <ul>
+    <li>Confidențialitate – protejarea datelor sensibile</li>
+    <li>Integritate – asigurarea că datele nu sunt modificate neautorizat</li>
+    <li>Disponibilitate – accesul autorizat la resurse când este necesar</li>
+  </ul>
+
+  <h2>Tipuri comune de atacuri</h2>
+  <ul>
+    <li><strong>Injecții SQL:</strong> Atacuri care exploatează interogările SQL neprotejate.</li>
+    <li><strong>XSS (Cross-site scripting):</strong> Injectarea de scripturi malițioase în pagini web.</li>
+    <li><strong>CSRF (Cross-site request forgery):</strong> Executarea de comenzi neautorizate prin sesiuni valide.</li>
+    <li><strong>Atacuri de tip brute force:</strong> Încercări repetate de ghicire a parolelor.</li>
+  </ul>
+
+  <button onclick="location.href='modul4_lectia2.html'">Următoarea lecție: Prevenirea injecțiilor SQL</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

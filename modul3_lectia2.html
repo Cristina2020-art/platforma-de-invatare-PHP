@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 3 – Lecția 2: Design Patterns în PHP</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
+    header { background: #343a40; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #343a40; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    pre { background: #eee; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 3 - Lecția 2</h1>
+  <p>Design Patterns în PHP</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul3_lectia1.html">Lecția 1</a> |
+  <a href="modul3_lectia3.html">Lecția 3</a> |
+  <a href="modul3.html">Modul 3</a>
+</nav>
+
+<div class="content">
+
+  <h2>Singleton</h2>
+  <pre><code>&lt;?php
+class Singleton {
+  private static $instanta = null;
+
+  private function __construct() {}
+
+  public static function getInstanta() {
+    if (self::$instanta === null) {
+      self::$instanta = new Singleton();
+    }
+    return self::$instanta;
+  }
+}
+?&gt;
+  </code></pre>
+
+  <h2>Factory</h2>
+  <pre><code>&lt;?php
+interface Animal {
+  public function sunet();
+}
+
+class Caine implements Animal {
+  public function sunet() {
+    return "Ham Ham";
+  }
+}
+
+class Pisica implements Animal {
+  public function sunet() {
+    return "Miau";
+  }
+}
+
+class FactoryAnimal {
+  public static function create($tip) {
+    if ($tip === "caine") {
+      return new Caine();
+    } elseif ($tip === "pisica") {
+      return new Pisica();
+    }
+    throw new Exception("Tip necunoscut");
+  }
+}
+?&gt;
+  </code></pre>
+
+  <h2>Observer</h2>
+  <pre><code>&lt;?php
+interface Observer {
+  public function update($mesaj);
+}
+
+class Subscriber implements Observer {
+  public function update($mesaj) {
+    echo "Mesaj primit: $mesaj";
+  }
+}
+
+class Publisher {
+  private $observers = [];
+
+  public function attach(Observer $obs) {
+    $this->observers[] = $obs;
+  }
+
+  public function notify($mesaj) {
+    foreach ($this->observers as $obs) {
+      $obs->update($mesaj);
+    }
+  }
+}
+?&gt;
+  </code></pre>
+
+  <h2>MVC – Introducere</h2>
+  <p>Model-View-Controller este un pattern pentru separarea responsabilităților în aplicații web.</p>
+
+  <button onclick="location.href='modul3_lectia3.html'">Următoarea lecție: Lucrul cu baze de date avansat</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

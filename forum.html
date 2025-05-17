@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Forum de discuții</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f2f2f2;
+    }
+    h1 {
+      color: #333;
+    }
+    .forum-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .topic {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .topic:last-child {
+      border-bottom: none;
+    }
+    .topic h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .topic p {
+      margin: 5px 0 0 0;
+      color: #666;
+    }
+    .new-topic {
+      margin-top: 30px;
+    }
+    .new-topic input, .new-topic textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .new-topic button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .new-topic button:hover {
+      background-color: #45a049;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="forum-container">
+    <h1>Forum de discuții</h1>
+
+    <div class="topic">
+      <h2>Subiect: Introducere în PHP</h2>
+      <p>Autor: Ana</p>
+    </div>
+
+    <div class="topic">
+      <h2>Subiect: Instalare server local (XAMPP)</h2>
+      <p>Autor: Mihai</p>
+    </div>
+
+    <div class="topic">
+      <h2>Subiect: Sintaxa de bază în PHP</h2>
+      <p>Autor: Ioana</p>
+    </div>
+
+    <div class="new-topic">
+      <h2>Adaugă un nou subiect</h2>
+      <form>
+        <label for="title">Titlu:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="content">Conținut:</label>
+        <textarea id="content" name="content" rows="4" required></textarea>
+
+        <button type="submit">Publică</button>
+      </form>
+    </div>
+  </div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

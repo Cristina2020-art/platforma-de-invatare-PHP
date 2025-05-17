@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 2: Sintaxa de bază în PHP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 15px;
+        background: #f0f0f0;
+        color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Modul 2: Sintaxa de bază în PHP</h1>
+</header>
+<nav>
+    <a href="#variabile">Variabile</a>
+    <a href="#tipuri">Tipuri de date</a>
+    <a href="#structuri">Structuri de control</a>
+    <a href="#bucle">Bucle</a>
+</nav>
+
+<main>
+    <section id="variabile">
+        <h2>Variabile</h2>
+        <p>O variabilă este un spațiu de memorie care stochează o valoare. În PHP, variabilele încep cu simbolul <code>$</code>.</p>
+        <pre><code><?php
+$nume = "Ana";
+$varsta = 25;
+echo "Nume: $nume<br>";
+echo "Vârstă: $varsta ani";
+?></code></pre>
+    </section>
+
+    <section id="tipuri">
+        <h2>Tipuri de date</h2>
+        <p>PHP suportă mai multe tipuri de date, inclusiv:</p>
+        <ul>
+            <li><strong>String</strong>: șiruri de caractere</li>
+            <li><strong>Integer</strong>: numere întregi</li>
+            <li><strong>Float</strong>: numere reale</li>
+            <li><strong>Boolean</strong>: valori adevărat sau fals</li>
+            <li><strong>Array</strong>: tablouri de valori</li>
+            <li><strong>Object</strong>: obiecte</li>
+            <li><strong>NULL</strong>: valoare nulă</li>
+        </ul>
+        <pre><code><?php
+$valoare = 3.14;
+$esteStudent = true;
+$materii = array("Matematică", "Informatică", "Fizică");
+
+echo "Valoare: $valoare<br>";
+echo "Este student: " . ($esteStudent ? "Da" : "Nu") . "<br>";
+echo "Materii: " . implode(", ", $materii);
+?></code></pre>
+    </section>
+
+    <section id="structuri">
+        <h2>Structuri de control</h2>
+        <p>Structurile de control determină fluxul execuției unui program. Exemple comune includ:</p>
+        <ul>
+            <li><strong>if</strong>: execută un bloc de cod dacă o condiție este adevărată</li>
+            <li><strong>else</strong>: execută un bloc de cod dacă condiția este falsă</li>
+            <li><strong>switch</strong>: selectează un bloc de cod de executat din mai multe opțiuni</li>
+        </ul>
+        <pre><code><?php
+$nota = 7;
+if ($nota >= 5) {
+    echo "Admis";
+} else {
+    echo "Respins";
+}
+?></code></pre>
+    </section>
+
+    <section id="bucle">
+        <h2>Bucle</h2>
+        <p>Buclele permit executarea repetată a unui bloc de cod. Tipuri comune de bucle includ:</p>
+        <ul>
+            <li><strong>for</strong>: buclă cu un număr cunoscut de iterații</li>
+            <li><strong>while</strong>: buclă care se execută cât timp o condiție este adevărată</li>
+            <li><strong>do...while</strong>: buclă care se execută cel puțin o dată și apoi repetă cât timp condiția este adevărată</li>
+            <li><strong>foreach</strong>: buclă care iterează prin fiecare element al unui array</li>
+        </ul>
+        <pre><code><?php
+for ($i = 1; $i <= 5; $i++) {
+    echo "Iterația: $i<br>";
+}
+?></code></pre>
+    </section>
+</main>
+
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+
+</body>
+</html>

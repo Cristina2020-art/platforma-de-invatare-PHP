@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 4 – Lecția 6: Stocarea securizată a parolelor</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 20px; }
+    header { background: #222; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #222; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    pre { background: #eee; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 4 - Lecția 6</h1>
+  <p>Stocarea securizată a parolelor</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul4_lectia5.html">Lecția 5</a> |
+  <a href="modul4_lectia7.html">Lecția 7</a> |
+  <a href="modul4.html">Înapoi la Modul 4</a>
+</nav>
+
+<div class="content">
+
+  <h2>Hashing-ul parolelor</h2>
+  <p>Parolele trebuie stocate criptat, nu în clar.</p>
+
+  <h2>Funcții PHP recomandate</h2>
+  <ul>
+    <li><code>password_hash()</code> – creează un hash sigur</li>
+    <li><code>password_verify()</code> – verifică parola la login</li>
+  </ul>
+
+  <h2>Exemplu de înregistrare</h2>
+  <pre><code>&lt;?php
+$parola = 'parola_user';
+$hash = password_hash($parola, PASSWORD_DEFAULT);
+echo $hash;
+?&gt;
+  </code></pre>
+
+  <h2>Exemplu de verificare</h2>
+  <pre><code>&lt;?php
+$parola_introdusa = 'parola_user';
+$hash_stocat = '$2y$10$...'; // hash preluat din baza de date
+
+if (password_verify($parola_introdusa, $hash_stocat)) {
+    echo "Parola corectă";
+} else {
+    echo "Parola greșită";
+}
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul4_lectia7.html'">Următoarea lecție: Protecția împotriva atacurilor CSRF</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

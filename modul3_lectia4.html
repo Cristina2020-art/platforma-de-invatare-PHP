@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 3 – Lecția 4: Manipularea și validarea avansată a datelor</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
+    header { background: #343a40; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #343a40; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    pre { background: #eee; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 3 - Lecția 4</h1>
+  <p>Manipularea și validarea avansată a datelor</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul3_lectia3.html">Lecția 3</a> |
+  <a href="modul3_lectia5.html">Lecția 5</a> |
+  <a href="modul3.html">Modul 3</a>
+</nav>
+
+<div class="content">
+
+  <h2>Filtrare și validare cu filtre PHP</h2>
+  <pre><code>&lt;?php
+$email = "exemplu@domeniu.com";
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  echo "Email valid";
+} else {
+  echo "Email invalid";
+}
+?&gt;
+  </code></pre>
+
+  <h2>Validări personalizate</h2>
+  <pre><code>&lt;?php
+function valideazaParola($parola) {
+  return strlen($parola) >= 8 && preg_match('/[A-Z]/', $parola);
+}
+
+if (valideazaParola("Parola123")) {
+  echo "Parola este valida";
+} else {
+  echo "Parola nu este valida";
+}
+?&gt;
+  </code></pre>
+
+  <h2>Sanitizare date complexe</h2>
+  <p>Exemplu de curățare a unui text pentru a preveni XSS:</p>
+  <pre><code>&lt;?php
+$input = "&lt;script&gt;alert('XSS')&lt;/script&gt;";
+$safe_input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+echo $safe_input;
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul3_lectia5.html'">Următoarea lecție: Crearea și utilizarea API-urilor REST avansate</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

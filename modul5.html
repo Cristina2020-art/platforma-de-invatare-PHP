@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <title>Modul 5: Baze de date MySQL în PHP</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        table { border-collapse: collapse; width: 50%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input[type="text"] { width: 200px; padding: 5px; }
+        input[type="submit"] { padding: 5px 15px; }
+        footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+    </style>
+</head>
+<body>
+
+<h1>Modul 5: Baze de date MySQL în PHP (PDO)</h1>
+
+<h2>Adaugă utilizator nou</h2>
+<form action="modul5.php" method="post">
+    <label for="nume">Nume:</label>
+    <input type="text" id="nume" name="nume" required><br><br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br><br>
+    <input type="submit" name="adauga" value="Adaugă">
+</form>
+
+<h2>Lista utilizatorilor</h2>
+<?php
+// Include afișarea datelor din baza de date (vezi modul5.php pentru codul PHP)
+include 'modul5.php';
+?>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

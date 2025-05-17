@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 3: Funcții și Array-uri în PHP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #eaeaea;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+            overflow-x: auto;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 15px;
+        background: #f0f0f0;
+        color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Modul 3: Funcții și Array-uri în PHP</h1>
+    <nav>
+        <a href="#functii">Funcții</a>
+        <a href="#arrayuri">Array-uri</a>
+        <a href="#superglobali">Superglobali</a>
+    </nav>
+</header>
+
+<main>
+    <section id="functii">
+        <h2>Funcții în PHP</h2>
+        <p>Funcțiile sunt blocuri de cod reutilizabile care execută o anumită sarcină. Ele pot primi parametri și pot returna valori.</p>
+        <pre><code>
+&lt;?php
+function salut($nume) {
+    return "Salut, " . $nume . "!";
+}
+
+echo salut("Ana");
+?&gt;
+        </code></pre>
+    </section>
+
+    <section id="arrayuri">
+        <h2>Array-uri în PHP</h2>
+        <p>Array-urile sunt structuri de date care pot stoca mai multe valori într-o singură variabilă.</p>
+        <pre><code>
+&lt;?php
+$fructe = array("Măr", "Banana", "Cireșe");
+echo $fructe[1]; // Afișează "Banana"
+
+$persoana = array(
+    "nume" => "Ion",
+    "varsta" => 30,
+    "oras" => "Cluj"
+);
+echo $persoana["oras"]; // Afișează "Cluj"
+?&gt;
+        </code></pre>
+    </section>
+
+    <section id="superglobali">
+        <h2>Superglobali în PHP</h2>
+        <p>Superglobalii sunt variabile predefinite în PHP care sunt accesibile din orice parte a scriptului. Exemple comune includ:</p>
+        <ul>
+            <li><code>$_GET</code>: Date transmise prin URL</li>
+            <li><code>$_POST</code>: Date transmise prin formulare</li>
+            <li><code>$_SESSION</code>: Date stocate în sesiune</li>
+            <li><code>$_COOKIE</code>: Date stocate în cookie-uri</li>
+        </ul>
+        <pre><code>
+&lt;?php
+// Exemplu de utilizare a $_GET
+if (isset($_GET['nume'])) {
+    echo "Salut, " . htmlspecialchars($_GET['nume']) . "!";
+}
+?&gt;
+        </code></pre>
+        <p>Pentru a testa acest script, accesează pagina cu un parametru în URL, de exemplu: <code>modul3.html?nume=Ana</code></p>
+    </section>
+</main>
+
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+
+</body>
+</html>

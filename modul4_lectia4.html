@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 4 – Lecția 4: Gestionarea sesiunilor în siguranță</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 20px; }
+    header { background: #222; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #222; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    pre { background: #eee; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 4 - Lecția 4</h1>
+  <p>Gestionarea sesiunilor în siguranță</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul4_lectia3.html">Lecția 3</a> |
+  <a href="modul4_lectia5.html">Lecția 5</a> |
+  <a href="modul4.html">Înapoi la Modul 4</a>
+</nav>
+
+<div class="content">
+
+  <h2>Ce sunt sesiunile PHP?</h2>
+  <p>Permite păstrarea datelor specifice unui utilizator între pagini.</p>
+
+  <h2>Măsuri de securitate</h2>
+  <ul>
+    <li>Folosește <code>session_start()</code> în fiecare script ce manipulează sesiunea.</li>
+    <li>Regenerarea ID-ului de sesiune pentru prevenirea atacurilor de tip fixare sesiune:</li>
+  </ul>
+
+  <pre><code>&lt;?php
+session_start();
+session_regenerate_id(true);
+?&gt;
+  </code></pre>
+
+  <h2>Setări importante în php.ini</h2>
+  <ul>
+    <li><code>session.cookie_httponly = 1</code> – previne accesul JavaScript la cookie-uri.</li>
+    <li><code>session.cookie_secure = 1</code> – cookie-urile sunt trimise doar prin HTTPS.</li>
+  </ul>
+
+  <h2>Ștergerea sesiunii la logout</h2>
+  <pre><code>&lt;?php
+session_start();
+$_SESSION = [];
+session_destroy();
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul4_lectia5.html'">Următoarea lecție: Autentificare și autorizare</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

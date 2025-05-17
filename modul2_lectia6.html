@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 2 – Lecția 6: Manipularea fișierelor în PHP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0; padding: 20px;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #343a40;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 2 - Lecția 6</h1>
+  <p>Manipularea fișierelor în PHP</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul2.html">Modul 2</a>
+</nav>
+
+<div class="content">
+
+  <h2>Citirea unui fișier</h2>
+  <pre><code>&lt;?php
+$continut = file_get_contents("exemplu.txt");
+echo $continut;
+?&gt;
+  </code></pre>
+
+  <h2>Scrierea într-un fișier</h2>
+  <pre><code>&lt;?php
+file_put_contents("exemplu.txt", "Salut! Aceasta este o scriere în fișier.");
+?&gt;
+  </code></pre>
+
+  <h2>Deschiderea și citirea linie cu linie</h2>
+  <pre><code>&lt;?php
+$fp = fopen("exemplu.txt", "r");
+while (($linie = fgets($fp)) !== false) {
+  echo $linie . "&lt;br&gt;";
+}
+fclose($fp);
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul2_lectia7.html'">Următoarea lecție: Lucrul cu API-uri REST</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

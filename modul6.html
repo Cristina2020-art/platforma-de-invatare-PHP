@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <title>Modul 6: Proiect final PHP + MySQL</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        table { border-collapse: collapse; width: 60%; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            padding: 5px; width: 200px;
+            margin-right: 10px;
+        }
+        input[type="submit"], button {
+            padding: 5px 15px; cursor: pointer;
+        }
+        .error { color: red; }
+        .success { color: green; }
+        footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+    </style>
+</head>
+<body>
+
+<h1>Proiect final: Gestionare contacte</h1>
+
+<h2>Adaugă / Editează contact</h2>
+<form method="post" action="modul6.php" id="contactForm">
+    <input type="hidden" name="id" id="id" value="">
+    <input type="text" name="nume" id="nume" placeholder="Nume" required><br><br>
+    <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+    <input type="tel" name="telefon" id="telefon" placeholder="Telefon" required><br><br>
+    <input type="submit" name="submit" value="Salvează">
+    <button type="button" onclick="resetForm()">Anulează</button>
+</form>
+
+<h2>Lista contacte</h2>
+<div id="listaContacte">
+    <!-- Aici va fi afișată lista de contacte -->
+    <?php include 'modul6.php'; ?>
+</div>
+
+<script>
+function resetForm() {
+    document.getElementById('id').value = '';
+    document.getElementById('nume').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('telefon').value = '';
+    document.getElementById('submit').value = 'Salvează';
+}
+function editContact(id, nume, email, telefon) {
+    document.getElementById('id').value = id;
+    document.getElementById('nume').value = nume;
+    document.getElementById('email').value = email;
+    document.getElementById('telefon').value = telefon;
+    document.getElementById('submit').value = 'Actualizează';
+}
+</script>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

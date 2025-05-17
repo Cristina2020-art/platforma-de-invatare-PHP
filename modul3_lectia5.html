@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 3 – Lecția 5: Crearea și utilizarea API-urilor REST avansate</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 20px; }
+    header { background: #343a40; color: white; padding: 15px; text-align: center; margin-bottom: 20px; }
+    nav a { color: #343a40; text-decoration: none; margin-right: 10px; }
+    .content { background: white; padding: 20px; max-width: 700px; margin: auto; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    pre { background: #eee; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    button { background: #007bff; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; margin-top: 20px; }
+    footer { text-align: center; margin-top: 40px; padding: 15px; background: #f0f0f0; color: #555; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 3 - Lecția 5</h1>
+  <p>Crearea și utilizarea API-urilor REST avansate</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="modul3_lectia4.html">Lecția 4</a> |
+  <a href="modul3_lectia6.html">Lecția 6</a> |
+  <a href="modul3.html">Modul 3</a>
+</nav>
+
+<div class="content">
+
+  <h2>Autentificare API (token, OAuth)</h2>
+  <p>Exemplu simplificat folosind token:</p>
+  <pre><code>&lt;?php
+$token_valid = "abc123";
+
+if ($_SERVER['HTTP_AUTHORIZATION'] !== "Bearer $token_valid") {
+  http_response_code(401);
+  echo json_encode(["error" => "Unauthorized"]);
+  exit;
+}
+// Continuă procesarea API
+?&gt;
+  </code></pre>
+
+  <h2>Versionare API</h2>
+  <p>Exemplu structură URL:</p>
+  <pre><code>https://exemplu.com/api/v1/resurse</code></pre>
+
+  <h2>Rate limiting</h2>
+  <p>Exemplu simplificat de limitare număr cereri pe client:</p>
+  <pre><code>&lt;?php
+session_start();
+
+if (!isset($_SESSION['cereri'])) {
+  $_SESSION['cereri'] = 0;
+  $_SESSION['start_time'] = time();
+}
+
+if (time() - $_SESSION['start_time'] < 60) {
+  $_SESSION['cereri']++;
+  if ($_SESSION['cereri'] > 100) {
+    http_response_code(429);
+    echo json_encode(["error" => "Too many requests"]);
+    exit;
+  }
+} else {
+  $_SESSION['cereri'] = 1;
+  $_SESSION['start_time'] = time();
+}
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul3_lectia6.html'">Următoarea lecție: Testare în PHP</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

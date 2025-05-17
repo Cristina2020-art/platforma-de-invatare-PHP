@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 1 – Lecția 9: Securizarea aplicațiilor PHP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 1 - Lecția 9</h1>
+  <p>Securizarea aplicațiilor PHP</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul1.html">Modul 1</a>
+</nav>
+
+<div class="content">
+
+  <h2>Prevenirea injecției SQL</h2>
+  <p>Folosește <code>prepared statements</code> pentru a evita atacurile SQL Injection.</p>
+  <pre><code>&lt;?php
+$stmt = $conn->prepare("SELECT * FROM utilizatori WHERE email = ?");
+$stmt->bind_param("s", $email);
+$email = $_POST['email'];
+$stmt->execute();
+$result = $stmt->get_result();
+?&gt;
+  </code></pre>
+
+  <h2>Prevenirea XSS (Cross-Site Scripting)</h2>
+  <p>Curăță datele primite de la utilizator cu <code>htmlspecialchars()</code> înainte de afișare.</p>
+  <pre><code>&lt;?php
+$input_curat = htmlspecialchars($_POST['comentariu']);
+echo $input_curat;
+?&gt;
+  </code></pre>
+
+  <h2>Gestionarea sesiunilor</h2>
+  <p>Folosește sesiuni PHP pentru autentificare și păstrarea stării utilizatorului.</p>
+  <pre><code>&lt;?php
+session_start();
+$_SESSION['user_id'] = $user_id;
+?&gt;
+  </code></pre>
+
+  <h2>Alte bune practici:</h2>
+  <ul>
+    <li>Nu afișa erori sensibile în producție</li>
+    <li>Folosește HTTPS pentru securizarea comunicației</li>
+    <li>Validează și filtrează toate datele externe</li>
+  </ul>
+
+  <button onclick="location.href='cursuri.html'">Înapoi la lista cursurilor</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>

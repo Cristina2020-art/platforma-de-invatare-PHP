@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modul 1 – Lecția 8: Lucrul cu baze de date MySQL</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: #007bff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    .content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: auto;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 15px;
+      background: #f0f0f0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Modul 1 - Lecția 8</h1>
+  <p>Lucrul cu baze de date MySQL în PHP</p>
+</header>
+
+<nav style="text-align:center; margin-bottom:20px;">
+  <a href="index.html">Acasă</a> |
+  <a href="cursuri.html">Cursuri</a> |
+  <a href="modul1.html">Modul 1</a>
+</nav>
+
+<div class="content">
+
+  <h2>Conectarea la baza de date MySQL</h2>
+  <pre><code>&lt;?php
+$host = "localhost";
+$user = "utilizator";
+$parola = "parola";
+$baza_date = "numele_bazei";
+
+$conn = new mysqli($host, $user, $parola, $baza_date);
+
+if ($conn->connect_error) {
+  die("Conexiune eșuată: " . $conn->connect_error);
+}
+echo "Conexiune realizată cu succes!";
+?&gt;
+  </code></pre>
+
+  <h2>Executarea unei interogări SELECT</h2>
+  <pre><code>&lt;?php
+$sql = "SELECT id, nume FROM utilizatori";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "ID: " . $row["id"]. " - Nume: " . $row["nume"]. "&lt;br&gt;";
+  }
+} else {
+  echo "0 rezultate";
+}
+$conn->close();
+?&gt;
+  </code></pre>
+
+  <h2>Inserarea datelor în tabel</h2>
+  <pre><code>&lt;?php
+$sql = "INSERT INTO utilizatori (nume, email) VALUES ('Ion', 'ion@example.com')";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Înregistrare adăugată cu succes.";
+} else {
+  echo "Eroare: " . $conn->error;
+}
+?&gt;
+  </code></pre>
+
+  <button onclick="location.href='modul1_lectia9.html'">Următoarea lecție: Securizarea aplicațiilor PHP</button>
+</div>
+<footer>
+    © 2025 Învață PHP. Toate drepturile sunt rezervate.
+  </footer>
+</body>
+</html>
